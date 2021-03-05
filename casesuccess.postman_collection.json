@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "c44fc96d-e4c8-461f-8515-ec3fe395c199",
+		"name": "casesuccess",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cadastroAPI",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Nome inserido é uma strig\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"custname\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"args\": {},\r\n    \"data\": \"\",\r\n    \"files\": {},\r\n    \"form\": {\r\n    \"comments\": \"teste\", \r\n    \"custemail\": \"rafael@rafael\", \r\n    \"custname\": \"rafael\", \r\n    \"custtel\": \"\", \r\n    \"delivery\": \"Sim\"\r\n    },\r\n    \"headers\": {\r\n        \"Accept\": \"*/*\",\r\n        \"Accept-Encoding\": \"gzip, deflate, br\",\r\n        \"Content-Length\": \"0\",\r\n        \"Host\": \"httpbin.org\",\r\n        \"Postman-Token\": \"a63e22b7-05c2-42b4-838f-fef82d6ac282\",\r\n        \"User-Agent\": \"PostmanRuntime/7.26.10\",\r\n        \"X-Amzn-Trace-Id\": \"Root=1-6041d29e-45cdcf340b4c5b9d5217ddd4\"\r\n    },\r\n    \"json\": null,\r\n    \"origin\": \"187.122.164.9\",\r\n    \"url\": \"https://httpbin.org/post\"\r\n}"
+				},
+				"url": {
+					"raw": "https://httpbin.org/post",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastroAPI",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Contém campo userId\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"userId\");\r",
+							"});\r",
+							"pm.test(\"Contém campo título\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"title\");\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastroAPI",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2\r\n}"
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastroAPI",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
